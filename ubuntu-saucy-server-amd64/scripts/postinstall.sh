@@ -1,6 +1,10 @@
-# postinstall.sh created from Mitchell's official lucid32/64 baseboxes
+#!/bin/sh
 
 date > /etc/vagrant_box_build_time
+
+# SSHd config
+echo "UseDNS no" >> /etc/ssh/sshd_config
+echo "GSSAPIAuthentication no" >> /etc/ssh/sshd_config
 
 # Apt-install various things necessary for Ruby, guest additions,
 # etc., and remove optional things to trim down the machine.
@@ -15,8 +19,6 @@ apt-get clean
 # Vbox
 # Without libdbus virtualbox would not start automatically after compile
 apt-get -y install --no-install-recommends libdbus-1-3
-
-
 
 # Installing the virtualbox guest additions
 VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
