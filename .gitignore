@@ -2,4 +2,5 @@ packer_cache
 output-*
 *.box
 .DS_Store
-.idea
+packer-templates.sublime-*
+
