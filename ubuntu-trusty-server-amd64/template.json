@@ -20,8 +20,9 @@
       "iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
       "iso_checksum_type": "md5",
       "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
-      "headless": true,
-      "shutdown_command": "echo 'shutdown -P now' > shutdown.sh; echo 'vagrant'|sudo -S sh 'shutdown.sh'",
+
+      "shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+      "shutdown_timeout": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
